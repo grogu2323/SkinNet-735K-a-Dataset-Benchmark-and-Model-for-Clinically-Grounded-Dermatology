@@ -1,8 +1,8 @@
 # Prescreening Pipeline
 
-Four-stage image prescreening used to build SkinNet-735K. Each stage sends every image to an instruction-tuned vision-language model (`medgemma-4b-it`, served with vLLM) and records a label, a confidence score, and a short reason. An image is retained only if it receives the pass label at every stage.
+![Prescreening pipeline](Prescreening_.jpeg)
 
-![Prescreening pipeline](1.prescreening_codes/Prescreening_.jpeg)
+Four-stage image prescreening used to build SkinNet-735K. Each stage sends every image to an instruction-tuned vision-language model (`medgemma-4b-it`, served with vLLM) and records a label, a confidence score, and a short reason. An image is retained only if it receives the pass label at every stage.
 
 ## Stages
 
