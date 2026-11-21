@@ -47,10 +47,11 @@ The repository includes:
 The released dataset and models are hosted on the HuggingFace account:
 
 **HuggingFace Models:**  
-- **Finetuned-Med-Gemma-27B**: Pratyush2323/SkinNet_735K_Finetuned_Med_Gemma_27b
-- **Finetuned-Med-Gemma-4B**: Pratyush2323/SkinNet_735K_Finetuned_Med_Gemma_4b
+- **Finetuned-Med-Gemma-27B**: [Pratyush2323/SkinNet_735K_Finetuned_Med_Gemma_27b]([url](https://huggingface.co/Pratyush2323/SkinNet_735K_Finetuned_Med_Gemma_27b))
+- **Finetuned-Med-Gemma-4B**: [Pratyush2323/SkinNet_735K_Finetuned_Med_Gemma_4b]([url](https://huggingface.co/Pratyush2323/SkinNet_735K_Finetuned_Med_Gemma_4b))
+  
 **HuggingFace Dataset:**
-- **Dataset-Repositry**: Pratyush2323/SkinNet_735K_Dataset
+- **Dataset-Repositry**: [Pratyush2323/SkinNet_735K_Dataset]([url](https://huggingface.co/datasets/Pratyush2323/SkinNet_735K_Dataset))
 
 **License:**  
 CC-BY-NC-SA-4.0
