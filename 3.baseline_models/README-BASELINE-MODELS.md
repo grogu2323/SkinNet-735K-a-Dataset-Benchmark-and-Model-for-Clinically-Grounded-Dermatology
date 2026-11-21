@@ -16,6 +16,8 @@ Scripts used to generate the baseline descriptors for the ten comparison models 
 | `108.skinvl_7b.py` | SkinVL-PubMM (7B) | LLaVA codebase |
 | `109.gemini.py` | Gemini 2.5 Flash | Google API |
 | `110.qwen_generation.py` | Qwen2-VL-72B | vLLM |
+| `111.ours_4b.py` | **Finetuned-Med-Gemma-4B** | vLLM |
+| `112.ours_27b.py` | **Finetuned-Med-Gemma-27B** | vLLM |
 
 ## Protocol
 
@@ -44,13 +46,15 @@ Max new tokens are listed as *12 short attributes / differential diagnosis / add
 | SkinVL-PubMM | original (model's own processor) | 10 | 200 / 350 / 750 / 750 | greedy | fp16, sequential |
 | Gemini 2.5 Flash | downscaled to 512×512 if larger | 10 | API default | API default | sequential, 0.5 s between calls |
 | Qwen2-VL-72B | 128×128 | 2 | 50 / 256 / 384 / 384 | T=0.1, top-p 0.9, frequency penalty 0.5, repetition penalty 1.15 | 3 vLLM servers `:8001-8003`, 4 concurrent each, round-robin |
+| Finetuned-Med-Gemma-4B | 896×896 | 6 | 30 / 300 / 600 / 600 | T=variable | vLLM `:8011`, 32 concurrent |
+| Finetuned-Med-Gemma-27B | 896×896 | 6 | 30 / 300 / 600 / 600 | T=variable | vLLM `:8012`, 32 concurrent |
 
 **Gemini** does not use the 15 separate questions. It gets one request per case with a system instruction asking for a single JSON object containing all 15 attributes (no word limits).
 
 ## Requirements
 
 - All scripts: `pandas`, `pillow`
-- vLLM scripts (101, 102, 105, 106, 110): `vllm`, `openai`
+- vLLM scripts (101, 102, 105, 106, 110, 111, 112): `vllm`, `openai`
 - Transformers scripts (103, 107): `torch`, `transformers`, `accelerate`
 - LLaVA scripts (104, 108): the [LLaVA](https://github.com/haotian-liu/LLaVA) / LLaVA-Med codebase
 - Gemini (109): `google-genai` and `export GEMINI_API_KEY=...`
@@ -82,6 +86,8 @@ vllm serve <model-id-or-path> \
 | 105 | `med_gemma_4b` | 8008 |
 | 106 | `med_gemma_27b` | 8007 |
 | 110 | `qwen_72b` | 8001, 8002, 8003 (one server per GPU group) |
+| 111 | `finetuned-med_gemma_4b` | 8011 |
+| 112 | `finetuned-med_gemma_27b` | 8012 |
 
 ## Running
 
@@ -111,6 +117,8 @@ python 103.med_r1_dermo_2b.py --batch_size 8   # reduce on OOM
 | 108 | `skinvl` | `skinvl_pubmm.csv` |
 | 109 | `gemini` | `gemini.csv` |
 | 110 | `qwen2vl_72b` | `qwen2vl_72b.csv` |
+| 111 | `finetuned_med_gemma_4b` | `ours_4b.py.csv` |
+| 112 | `finetuned_med_gemma_27b` | `ours_27b.py.csv` |
 
 ## Resuming and overwriting
 
