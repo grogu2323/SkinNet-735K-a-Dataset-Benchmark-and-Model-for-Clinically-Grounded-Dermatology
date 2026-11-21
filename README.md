@@ -50,6 +50,17 @@ The released dataset and models are hosted on the HuggingFace account:
 - **Finetuned-Med-Gemma-27B**: Pratyush2323/SkinNet_735K_Finetuned_Med_Gemma_27b
 - **Finetuned-Med-Gemma-4B**: Pratyush2323/SkinNet_735K_Finetuned_Med_Gemma_4b
 
+## Repository Contents
+
+The repository is organized in five steps, in the order of the pipeline. Each folder has its own README with details.
+
+| Folder | What it contains | README |
+|---|---|---|
+| [`1.prescreening_codes`](1.prescreening_codes) | Four-stage image prescreening (human dermatology, image quality, modality, surgery) using MedGemma-4B served with vLLM | [README](1.prescreening_codes/README-PRESCREENING.md) |
+| [`2.finetuning_codes`](2.finetuning_codes) | LoRA fine-tuning of MedGemma-4B and 27B on the expert-labeled seed set, plus the fine-tuning and inference pipeline figure and training curves | [README](2.finetuning_codes/README-FINETUNING-INFERENCING.md) |
+| [`3.baseline_models`](3.baseline_models) | Descriptor-generation scripts for the baseline models (Lingshu, MED-R1-DERMO, LLaVA-Med, MedGemma, DermatoLlama, SkinVL, Gemini, Qwen) and for our fine-tuned 4B and 27B models | [README](3.baseline_models/README-BASELINE-MODELS.md) |
+| [`4.evaluation_llm_semantic`](4.evaluation_llm_semantic) | Evaluation scripts: semantic similarity (embedding cosine, BERTScore) and LLM-as-judge (Gemma, Llama) | [README](4.evaluation_llm_semantic/README-EVALUATION.md) |
+| [`5.results`](5.results) | Notebooks for dataset statistics (source composition, resolution, prescreening yield, train/test splits), score aggregation, and skin-tone-stratified results | [Dataset statistics](5.results/README-DATASET-STATISTICS.md), [Results](5.results/README-RESULTS.md) |
 **HuggingFace Dataset:**
 - **Dataset-Repositry**: Pratyush2323/SkinNet_735K_Dataset
 
