@@ -134,6 +134,9 @@ View the curves with `tensorboard --logdir OUTPUT_DIR/logs`.
 
 ## Results
 
+![Validation loss and token accuracy across epochs](epoch_curves.png)
+*Validation loss and token accuracy for MedGemma-4B and 27B. [Download as PDF](epoch_curves.pdf)*
+
 Per-epoch validation metrics. The best MedGemma-27B checkpoint is epoch 3 (lowest validation
 loss); MedGemma-4B plateaus from epoch 7.
 
