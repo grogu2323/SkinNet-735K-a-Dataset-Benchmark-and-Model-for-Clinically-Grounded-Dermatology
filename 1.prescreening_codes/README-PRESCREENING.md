@@ -14,20 +14,51 @@ Four-stage image prescreening used to build SkinNet-735K. Each stage sends every
 ### What each stage accepts and rejects
 
 **1. Human dermatology check**
-- Accepts: human skin with any lesion, rash, or abnormality; dermoscopic images; mucosal or genital dermatology images; nail, scalp, or hair disorders; close-up clinical skin photos.
-- Rejects: non-medical images, histology/microscopy only, animal images, radiology scans, drawings or illustrations, prescriptions.
+- Accepts:
+  - human skin with any lesion, rash, or abnormality
+  - dermoscopic images
+  - mucosal or genital dermatology images
+  - nail, scalp, or hair disorders
+  - close-up clinical skin photos.
+- Rejects:
+  - non-medical images,
+  - histology/microscopy only,
+  - animal images,
+  - radiology scans,
+  - drawings or illustrations,
+  - prescriptions.
 
 **2. Image quality filter**
-- Accepts: sharp and visible lesions, proper lighting, sufficient resolution, clear clinical details.
-- Rejects: extremely blurry images, very dark or overexposed images, severe artifacts or corruption, lesion not visible at all.
+- Accepts:
+  - sharp and visible lesions,
+  - proper lighting,
+  - sufficient resolution,
+  - clear clinical details.
+- Rejects:
+  - extremely blurry images,
+  - very dark or overexposed images,
+  - severe artifacts or corruption,
+  - lesion not visible at all.
 
 **3. Modality filter**
 - Accepts: clinical dermatology photos (direct patient skin photographs).
-- Rejects: histopathology slides, dermoscopic images (polarised close-up), microscopy / cellular images, laboratory microscopic views.
+- Rejects:
+  - histopathology slides,
+  - dermoscopic images (polarised close-up),
+  - microscopy / cellular images,
+  - laboratory microscopic views.
 
 **4. Surgery detection**
-- Accepts (`NON_SURGERY`): normal dermatology lesions, healed surgical scars, post-surgical skin (no active procedure), wounds without instruments present.
-- Rejects (`SURGERY`): ongoing surgery with instruments, suturing or stitching in progress, active operative procedures, scalpels or clamps cutting tissue.
+- Accepts (`NON_SURGERY`):
+  - normal dermatology lesions,
+  - healed surgical scars,
+  - post-surgical skin (no active procedure),
+  - wounds without instruments present.
+- Rejects (`SURGERY`):
+  - ongoing surgery with instruments,
+  - suturing or stitching in progress,
+  - active operative procedures,
+  - scalpels or clamps cutting tissue.
 
 The full prompt for each stage is in the `QUESTION` constant of its script.
 
