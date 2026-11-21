@@ -49,6 +49,11 @@ The released dataset and models are hosted on the HuggingFace account:
 **HuggingFace Models:**  
 - **Finetuned-Med-Gemma-27B**: Pratyush2323/SkinNet_735K_Finetuned_Med_Gemma_27b
 - **Finetuned-Med-Gemma-4B**: Pratyush2323/SkinNet_735K_Finetuned_Med_Gemma_4b
+**HuggingFace Dataset:**
+- **Dataset-Repositry**: Pratyush2323/SkinNet_735K_Dataset
+
+**License:**  
+CC-BY-NC-SA-4.0
 
 ## Repository Contents
 
@@ -61,9 +66,3 @@ The repository is organized in five steps, in the order of the pipeline. Each fo
 | [`3.baseline_models`](3.baseline_models) | Descriptor-generation scripts for the baseline models (Lingshu, MED-R1-DERMO, LLaVA-Med, MedGemma, DermatoLlama, SkinVL, Gemini, Qwen) and for our fine-tuned 4B and 27B models | [README](3.baseline_models/README-BASELINE-MODELS.md) |
 | [`4.evaluation_llm_semantic`](4.evaluation_llm_semantic) | Evaluation scripts: semantic similarity (embedding cosine, BERTScore) and LLM-as-judge (Gemma, Llama) | [README](4.evaluation_llm_semantic/README-EVALUATION.md) |
 | [`5.results`](5.results) | Notebooks for dataset statistics (source composition, resolution, prescreening yield, train/test splits), score aggregation, and skin-tone-stratified results | [Dataset statistics](5.results/README-DATASET-STATISTICS.md), [Results](5.results/README-RESULTS.md) |
-**HuggingFace Dataset:**
-- **Dataset-Repositry**: Pratyush2323/SkinNet_735K_Dataset
-
-**License:**  
-CC-BY-NC-SA-4.0
-
